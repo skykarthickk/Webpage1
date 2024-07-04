@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <body>
+        <h1>✩𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐒𝐊𝐘 𝐃𝐁𝐀 𝐈𝐓𝐀𝐋𝐘✩</h1>
+    </body>
+    <style>
+        body{
+            height: 100vh;
+            background-image:url('skylogo.jpg');
+            background-position: center;
+            background-size: cover;
+            filter: brightness(100%);
+        }
+        .header {
+            text-align: right;
+            margin-top: 50px;
+        }
+
+        #majorLinksBtn {
+            font-size: 24px;
+            padding: 10px 20px;
+            border: none;
+            background-color: rgb(252, 227, 5);
+            border-radius: 10px;
+            cursor: pointer;
+            
+        }
+
+        #majorLinksContainer {
+            text-align: left;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .majorLink {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            margin: 10px;
+        }
+        h1 {
+            text-align:center;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button id="majorLinksBtn">Major Links</button>
+        <div id="majorLinksContainer">
+            <p><a href="https://pas.sky.local/PasswordVault/v10/Accounts" class="majorLink">CYBERARC</a></p>
+            <p><a href="http://dbpwiki.sky.local/index.php/Pagina_principale" class="majorLink">DB-WIKI-ITALY</a></p>
+            <p><a href="https://sky.service-now.com/now/nav/ui/classic/params/target/incident_list.do%3Fsysparm_userpref_module%3Db55fbec4c0a800090088e83d7ff500de%26sysparm_query%3Dactive%253Dtrue%255Eassignment_groupDYNAMIC570ca06637aafe406cf54b3a54990e96%255Estate%2521%253D6%255EEQ%26sysparm_clear_stack%3Dtrue" class="majorLink">SERVICE-NOW</a></p>
+            <p><a href="https://awsatsky.awsapps.com/start/#/" class="majorLink">AWS</a></p>
+            <p><a href="https://ptcoomiapp-ese1.sky.local/oo/login/login-failed" class="majorLink">OOTOOL</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("majorLinksBtn").addEventListener("click", function() {
+            document.getElementById("majorLinksContainer").style.display = "block";
+        });
+
+        document.querySelectorAll(".majorLink").forEach(item => {
+            item.addEventListener("click", event => {
+                event.preventDefault();
+                window.location.href = item.getAttribute("href");
+            });
+        });
+    </script>
+</body>
+</html>
