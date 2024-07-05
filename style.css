@@ -5,7 +5,7 @@
 }
 body{
     height: 100vh;
-    background-image:url('skylogo.PNG');
+    background-image:url('Darksky.jpg');
     background-position: center;
     background-size: cover;
     filter: brightness(100%);
