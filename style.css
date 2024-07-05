@@ -5,7 +5,7 @@
 }
 body{
     height: 100vh;
-    background-image:url('skylogo.jpg');
+    background-image:url('skylogo.PNG');
     background-position: center;
     background-size: cover;
     filter: brightness(100%);
