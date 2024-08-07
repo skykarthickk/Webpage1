@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+          body{
+            height: 100vh;
+            background-image:url('Delphix.jpg');
+            background-position: center;
+            background-size: cover;
+            filter: brightness(100%);
+        }
+        .search-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .links {
+            width: 50%;
+            margin-top: 10px;
+            text-align:right;
+        }
+        .links a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .links a:hover {
+            color: blue;
+        }
+        .not-found {
+            display: none;
+            color: red;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        h1
+         {
+            color: #fffb00;
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 2px 2px #aaaaaa;
+}
+    </style>
+</head>
+<body>
+    <h1>DELPHIX PROD DATABASES</h1>
+    <div class="search-box">
+        <input type="text" id="searchInput" onkeyup="filterLinks()" placeholder="Search for Delphix DB Name..">
+    </div>
+    <div class="links" id="linksList">
+        <a href="http://prdmisdelphix03/Server.html#/dataset/ORACLE_DB_CONTAINER-1/timeflow" target="_blank">LIVE</a>
+        <a href="http://prdmisdelphix03/Server.html#/dataset/ORACLE_DB_CONTAINER-177/timeflow" target="_blank">LIVE23</a>
+        <a href="http://prdmisdelphix02/Server.html#/dataset/ORACLE_DB_CONTAINER-16/timeflow" target="_blank">SPY</a>
+        <a href="http://prdmisdelphix02/Server.html#/dataset/ORACLE_DB_CONTAINER-17/timeflow" target="_blank">VISP</a>
+        <a href="http://prdmisdelphix03/Server.html#/dataset/ORACLE_DB_CONTAINER-151/timeflow" target="_blank">ACDB</a>
+        <a href="http://prdmisdelphix03/Server.html#/dataset/ORACLE_DB_CONTAINER-7/config/source" target="_blank">HRP</a>
+        <a href="http://prdmisdelphix03/Server.html#/dataset/ORACLE_DB_CONTAINER-8/config/source" target="_blank">P01</a>
+    </div>
+    <div class="not-found" id="notFoundMessage">
+        -- Not Found --
+    </div>
+
+</body>
+</html>
+<script>
+    function filterLinks() {
+        var input, filter, links, a, i, txtValue, found;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        links = document.getElementById("linksList");
+        a = links.getElementsByTagName('a');
+        found = false;
+
+        for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+                found = true;
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+
+        document.getElementById('notFoundMessage').style.display = found ? 'none' : 'block';
+    }
+</script>
